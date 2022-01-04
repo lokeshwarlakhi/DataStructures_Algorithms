@@ -13,18 +13,26 @@ void c_p_c(){
     #endif
 }
 
-int main(){
-    // c_p_c();
+int callandsay(int a){
     unordered_map<char,int> m;
-    string n;cin>>n;
-    reverse(n.begin(),n.end());
-    // n = str(n);
-    for(char i:n){
+    string s = str(a);
+    reverse(s.begin(),s.end());
+    for(char i:s){
         m[i]+=1;
     }
-    // for(auto &c: m){
-    //     cout<<c.second<<c.first;
-    // }
-
+    int p =0;
+    for(auto pr:m){
+        int q = (pr.second*10) + (int)pr.first;
+        p = (p*10)+q;
+    }
+    return p;
+}
+int main(){
+    int n;cin>>n;
+    int p=1;
+    for(int i=1;i<=n;i++){
+        p = callandsay(p);
+    }
+    cout<<p;
     return 0;
 }
