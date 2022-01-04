@@ -24,11 +24,11 @@ int main(){
 		}
 		if(p>max){
 			max = p;
-			cout<<"max "<<max<<endl;
+			// cout<<"max "<<max<<endl;
 			ans.first = i;
-			cout<<"First "<<ans.first<<endl;
+			// cout<<"First "<<ans.first<<endl;
 			ans.second = p;
-			cout<<"Second "<<ans.second<<endl;
+			// cout<<"Second "<<ans.second<<endl;
 		}
 	}
 	cout<<ans.first<<endl;
