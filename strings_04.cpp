@@ -14,23 +14,32 @@ void c_p_c(){
 }
 
 int callandsay(int a){
-    unordered_map<char,int> m;
-    string s = str(a);
+    if(a==0){
+        return 1;
+    }
+    else{
+    string s = to_string(a);
     reverse(s.begin(),s.end());
-    for(char i:s){
-        m[i]+=1;
+    unordered_map<char,int> mp;
+    
+    for(char c: s){
+        mp[c]=mp[c]+1;
+        
     }
-    int p =0;
-    for(auto pr:m){
-        int q = (pr.second*10) + (int)pr.first;
-        p = (p*10)+q;
+    string p = "";
+    
+
+    for(auto pr:mp){
+        p = p+to_string(pr.second)+pr.first;
     }
-    return p;
+    return stoi(p);
+    }
+
 }
 int main(){
     int n;cin>>n;
-    int p=1;
-    for(int i=1;i<=n;i++){
+    int p=0;
+    for(int i=0;i<n;i++){
         p = callandsay(p);
     }
     cout<<p;
